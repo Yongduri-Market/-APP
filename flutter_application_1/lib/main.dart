@@ -12,16 +12,16 @@ import 'screens/home/home_screen.dart';
 import 'theme.dart';
 
 void main() {
-  runApp(CarrotMarketUI());
+  runApp(MarketUI());
 }
 
-class CarrotMarketUI extends StatelessWidget {
-  const CarrotMarketUI({super.key});
+class MarketUI extends StatelessWidget {
+  const MarketUI({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'carrot_market_ui',
+      title: 'market_ui',
       debugShowCheckedModeBanner: false,
       home: MainScreens(),
       theme: theme(),
