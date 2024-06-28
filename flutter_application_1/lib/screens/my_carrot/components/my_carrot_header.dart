@@ -8,7 +8,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../theme.dart';
 
 class MyCarrotHeader extends StatelessWidget {
-  const MyCarrotHeader({super.key});
+  const MyCarrotHeader(
+      {super.key,
+      required String buttonText,
+      required Null Function() onProfileButtonPressed});
 
   @override
   Widget build(BuildContext context) {

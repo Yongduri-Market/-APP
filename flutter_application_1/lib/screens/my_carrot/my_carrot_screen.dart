@@ -23,7 +23,10 @@ class MyCarrotScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          MyCarrotHeader(),
+          MyCarrotHeader(
+            buttonText: '',
+            onProfileButtonPressed: () {},
+          ),
           const SizedBox(height: 3.0),
           CardIconMenu(
             iconMenuList: iconMenu1,
