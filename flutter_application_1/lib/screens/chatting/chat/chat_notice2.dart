@@ -1,15 +1,12 @@
-// chat_notice.dart
-
 import 'package:flutter/material.dart';
-import '../chat review/chat_review.dart';
 
-class ChatNotice extends StatelessWidget {
+class ChatNotice2 extends StatelessWidget {
   final String message;
   final Color backgroundColor;
   final Color buttonColor;
   final Color cancelButtonColor;
 
-  const ChatNotice({
+  const ChatNotice2({
     super.key,
     required this.message,
     required this.backgroundColor,
@@ -34,11 +31,10 @@ class ChatNotice extends StatelessWidget {
               backgroundColor: buttonColor, // 버튼 색상 지정
             ),
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const ChatReviewPage()),
-              );
+              Navigator.of(context).pop();
+              // 여기에 실시간 위치 공유 서비스 동의 시 동작할 코드 추가
             },
-            child: const Text('예, 거래했어요'),
+            child: const Text('예'),
           ),
           TextButton(
             style: TextButton.styleFrom(
@@ -48,7 +44,7 @@ class ChatNotice extends StatelessWidget {
               Navigator.of(context).pop();
             },
             child: const Text(
-              '취소',
+              '아니요',
               style: TextStyle(color: Colors.black),
             ),
           ),

@@ -1,17 +1,20 @@
-// ignore_for_file: unnecessary_import, prefer_const_constructors
+// ignore_for_file: unnecessary_import, unused_element
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../../../theme.dart';
 
 class MyCarrotHeader extends StatelessWidget {
-  const MyCarrotHeader(
-      {super.key,
-      required String buttonText,
-      required Null Function() onProfileButtonPressed});
+  final String buttonText;
+  final VoidCallback onProfileButtonPressed;
+
+  const MyCarrotHeader({
+    super.key,
+    required this.buttonText,
+    required this.onProfileButtonPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,7 @@ class MyCarrotHeader extends StatelessWidget {
           children: [
             _buildProfileRow(),
             const SizedBox(height: 30),
-            _buildProfileButton(),
+            _buildProfileButton(context),
             const SizedBox(height: 10),
           ],
         ),
@@ -59,7 +62,7 @@ class MyCarrotHeader extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.grey[100]),
-                child: Icon(
+                child: const Icon(
                   Icons.camera_alt_outlined,
                   size: 15,
                 ),
@@ -67,27 +70,27 @@ class MyCarrotHeader extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('용가리', style: textTheme().displayMedium), // :TODO 04수정
-            SizedBox(height: 10),
-            Text('좌동 #00912'),
+            const SizedBox(height: 10),
+            const Text('좌동 #00912'),
           ],
         )
       ],
     );
   }
 
-  Widget _buildProfileButton() {
+  Widget _buildProfileButton(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onProfileButtonPressed,
       child: Container(
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 171, 212, 234),
+          color: const Color.fromARGB(255, 171, 212, 234),
           border: Border.all(
-            color: Color.fromARGB(255, 184, 224, 247),
+            color: const Color.fromARGB(255, 184, 224, 247),
             width: 1.0,
           ),
           borderRadius: BorderRadius.circular(6.0),
@@ -95,15 +98,14 @@ class MyCarrotHeader extends StatelessWidget {
         height: 45,
         child: Center(
           child: Text(
-            '프로필 보기', // :TODO 04수정 (오타)
-            style: textTheme().titleMedium, // :TODO 04수정
+            buttonText,
+            style: textTheme().titleMedium,
           ),
         ),
       ),
     );
   }
 
-  // ignore: unused_element
   Widget _buildRoundTextButton(String title, IconData iconData) {
     return Column(
       children: [
@@ -112,9 +114,9 @@ class MyCarrotHeader extends StatelessWidget {
           height: 60,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30.0),
-              color: Color.fromRGBO(255, 226, 208, 1),
+              color: const Color.fromRGBO(255, 226, 208, 1),
               border: Border.all(
-                  color: Color.fromARGB(255, 184, 224, 247), width: 0.5)),
+                  color: const Color.fromARGB(255, 184, 224, 247), width: 0.5)),
         ),
       ],
     );

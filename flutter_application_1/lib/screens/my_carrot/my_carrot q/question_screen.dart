@@ -51,9 +51,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 _buildQARow(Icons.support_agent, _texts[secondIndex],
                     size: 35.0),
               Divider(
-                  color: Colors.white.withOpacity(0.5),
-                  height: 20,
-                  thickness: 1),
+                color: Colors.white.withOpacity(0.5),
+                height: 20,
+                thickness: 1,
+              ),
             ],
           );
         },

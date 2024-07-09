@@ -1,12 +1,12 @@
-// ignore_for_file: unused_element
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../components/my_carrot_header.dart'; // MyCarrotHeader 위젯을 불러오기 위해 import
 import 'mypage_profile2.dart'; // MyPageProfile2 위젯을 불러오기 위해 import
 
 class MyPageProfile extends StatefulWidget {
-  const MyPageProfile({super.key});
+  final List<String> reviews; // 후기 데이터를 저장할 리스트
+
+  const MyPageProfile({super.key, required this.reviews});
 
   @override
   State<MyPageProfile> createState() => _MyPageProfileState();
@@ -55,34 +55,28 @@ class _MyPageProfileState extends State<MyPageProfile> {
               ],
             ),
           ),
-          const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 30.0, top: 15.0, bottom: 25.0),
-                child: Icon(Icons.group, size: 28.0, color: Colors.white),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 30.0, top: 25.0, bottom: 25.0),
-                child: Icon(Icons.group, size: 28.0, color: Colors.white),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 30.0, top: 25.0, bottom: 25.0),
-                child: Icon(Icons.group, size: 28.0, color: Colors.white),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 30.0, top: 25.0, bottom: 25.0),
-                child: Icon(Icons.group, size: 28.0, color: Colors.white),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 30.0, top: 25.0, bottom: 25.0),
-                child: Icon(Icons.group, size: 28.0, color: Colors.white),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 30.0, top: 25.0, bottom: 25.0),
-                child: Icon(Icons.group, size: 28.0, color: Colors.white),
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: widget.reviews.map((review) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.star, color: Colors.yellow),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Text(
+                          review,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
           ),
         ],
       ),

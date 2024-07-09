@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class Chatmainpage extends StatefulWidget {
-  const Chatmainpage({super.key});
+class AppointmentPage extends StatefulWidget {
+  const AppointmentPage({super.key});
 
   @override
-  State<Chatmainpage> createState() => _ChatmainpageState();
+  State<AppointmentPage> createState() => _AppointmentPageState();
 }
 
-class _ChatmainpageState extends State<Chatmainpage> {
+class _AppointmentPageState extends State<AppointmentPage> {
   DateTime selectedDate = DateTime.now();
   TimeOfDay selectedTime = TimeOfDay.now();
   String selectedLocation = '인성관';
@@ -39,6 +39,15 @@ class _ChatmainpageState extends State<Chatmainpage> {
         selectedTime = picked;
       });
     }
+  }
+
+  void _saveAppointment() {
+    Navigator.pop(context, {
+      'date': selectedDate,
+      'time': selectedTime.format(context),
+      'location': selectedLocation,
+      'reminder': selectedReminder,
+    });
   }
 
   @override
@@ -179,13 +188,16 @@ class _ChatmainpageState extends State<Chatmainpage> {
                 ),
               ],
             ),
+            const SizedBox(height: 20),
+            Center(
+              child: ElevatedButton(
+                onPressed: _saveAppointment,
+                child: const Text('약속 저장'),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-}
-
-void main() {
-  runApp(const MaterialApp(home: Chatmainpage()));
 }

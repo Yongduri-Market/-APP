@@ -18,5 +18,4 @@ final List<IconMenu> iconMenu1 = [
 
 final List<IconMenu> iconMenu2 = [
   IconMenu(title: '자주 묻는 Q/A', iconData: FontAwesomeIcons.question),
-  IconMenu(title: '신고하기', iconData: FontAwesomeIcons.triangleExclamation),
 ];

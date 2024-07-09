@@ -1,30 +1,22 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
 
-class Chatmainpage extends StatefulWidget {
-  const Chatmainpage({super.key});
+class ChatReview2Page extends StatelessWidget {
+  final List<String> selectedImages;
 
-  @override
-  State<Chatmainpage> createState() => _ChatmainpageState();
-}
-
-class _ChatmainpageState extends State<Chatmainpage> {
-  final List<String> _imagePaths = [
-    'assets/main.png',
-    'assets/main.png',
-    'assets/main.png',
-    'assets/main.png',
-    'assets/main.png',
-  ];
-  final List<String> _texts = [
-    '제가 있는 곳까지 와서 거래했어요',
-    '시간 약속을 잘 지켜요',
-    '친절하고 매너가 좋아요',
-    '응답이 빨라요',
-    '적당한 가격에 구매했어요',
-  ];
+  const ChatReview2Page({super.key, required this.selectedImages});
 
   @override
   Widget build(BuildContext context) {
+    final List<String> _texts = [
+      '제가 있는 곳까지 와서 거래했어요',
+      '시간 약속을 잘 지켜요',
+      '친절하고 매너가 좋아요',
+      '응답이 빨라요',
+      '적당한 가격에 구매했어요',
+    ];
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 184, 224, 247),
       appBar: AppBar(
@@ -50,52 +42,7 @@ class _ChatmainpageState extends State<Chatmainpage> {
               padding:
                   const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
               child: Row(
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.rectangle,
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '용용이 인형',
-                        style: TextStyle(
-                          fontSize: 17,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        '거래한 이웃 용가리',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20, top: 20),
-              child: Divider(
-                color: Color.fromARGB(255, 215, 240, 245),
-                thickness: 1.0,
-                height: 30,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: _imagePaths.map((path) {
+                children: selectedImages.map((path) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: Image.asset(
@@ -108,9 +55,17 @@ class _ChatmainpageState extends State<Chatmainpage> {
               ),
             ),
             const Padding(
+              padding: EdgeInsets.only(left: 20, top: 20),
+              child: Divider(
+                color: Color.fromARGB(255, 215, 240, 245),
+                thickness: 1.0,
+                height: 30,
+              ),
+            ),
+            const Padding(
               padding: EdgeInsets.all(30.0),
               child: Text(
-                '용가리님과 거래가 어떠셨나요?',
+                '어떤 점이 최고였나요?',
                 style: TextStyle(fontSize: 16, color: Colors.black),
               ),
             ),
@@ -166,7 +121,7 @@ class _ChatmainpageState extends State<Chatmainpage> {
                 ),
               ),
             ),
-            const SizedBox(height: 10), // 직사각형과 버튼 사이의 간격 조절
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -174,8 +129,8 @@ class _ChatmainpageState extends State<Chatmainpage> {
                   width: 350,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 166, 206, 227), // 버튼 배경 색상
-                    borderRadius: BorderRadius.circular(10), // 둥근 모양 설정
+                    color: const Color.fromARGB(255, 166, 206, 227),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Center(
                     child: Text(
@@ -186,7 +141,7 @@ class _ChatmainpageState extends State<Chatmainpage> {
                 ),
               ],
             ),
-            const SizedBox(height: 10), // 버튼 사이의 간격 조절
+            const SizedBox(height: 10),
           ],
         ),
       ),

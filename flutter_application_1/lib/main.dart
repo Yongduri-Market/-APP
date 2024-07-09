@@ -8,7 +8,7 @@ import 'package:flutter_application_1/screens/home/home_screen.dart';
 import 'screens/main_screens.dart';
 import 'screens/chatting/chatting_screen.dart';
 import 'screens/home/home_screen.dart';
-//import 'screens/my_carrot/my_carrot_screen.dart';
+import 'screens/my_carrot/my_carrot_screen.dart';
 import 'theme.dart';
 
 void main() {

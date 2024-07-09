@@ -1,11 +1,7 @@
-// ignore_for_file: prefer_const_constructors, unused_import
-
 import 'package:flutter/material.dart';
-
 import '../../models/chat_message.dart';
-// import '../components/appbar_prefreed_size.dart';
 import '../chatting/components/chat_container.dart';
-import '../chatting/chatting2.dart';
+import '../chatting/chat/chat1.dart'; // chat1.dart를 import 합니다.
 
 class ChattingScreen extends StatelessWidget {
   const ChattingScreen({super.key});
@@ -28,8 +24,16 @@ class ChattingScreen extends StatelessWidget {
       body: ListView(
         children: List.generate(
           chatMessageList.length,
-          (index) => ChatContainer(
-            chatMessage: chatMessageList[index],
+          (index) => GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Chatmainpage()),
+              );
+            },
+            child: ChatContainer(
+              chatMessage: chatMessageList[index],
+            ),
           ),
         ),
       ),
