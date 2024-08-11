@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../models/icon_menu.dart';
 import '../../../theme.dart';
+import '../my_carrot q/report.dart'; // report.dart import
+import '../my_carrot q/question_screen.dart'; // question_screen.dart import
 
 class CardIconMenu extends StatelessWidget {
   final List<IconMenu> iconMenuList;
@@ -22,8 +24,28 @@ class CardIconMenu extends StatelessWidget {
         child: Column(
           children: List.generate(
             iconMenuList.length,
-            (index) => _buildRowIconItem(
-                iconMenuList[index].title, iconMenuList[index].iconData),
+            (index) => InkWell(
+              onTap: () {
+                if (iconMenuList[index].title == '신고하기') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ReportScreen()), // 신고하기로 이동
+                  );
+                } else if (iconMenuList[index].title == '자주 묻는 Q/A') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const QuestionScreen()), // Q/A 화면으로 이동
+                  );
+                } else {
+                  // 다른 메뉴의 경우 별도 동작 추가 가능
+                }
+              },
+              child: _buildRowIconItem(
+                  iconMenuList[index].title, iconMenuList[index].iconData),
+            ),
           ),
         ),
       ),
@@ -38,7 +60,7 @@ class CardIconMenu extends StatelessWidget {
           Icon(iconData, size: 20, color: Colors.white),
           const SizedBox(width: 30),
           Text(title, style: textTheme().titleMedium)
-        ], // :TODO 04수정
+        ],
       ),
     );
   }

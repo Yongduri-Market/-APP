@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 import '../../models/icon_menu.dart';
 import 'components/card_icon_menu.dart';
 import 'components/my_carrot_header.dart';
-import '../my_carrot/my_carrot q/question_screen.dart'; // question_screen.dart import
+//import '../my_carrot/my_carrot q/question_screen.dart'; // question_screen.dart import
 import '../my_carrot/profile/mypage_profile.dart'; // mypage_profile.dart import
+//import '../my_carrot/my_carrot q/report.dart'; // report.dart import
 
 class MyCarrotScreen extends StatelessWidget {
   const MyCarrotScreen({super.key});
@@ -42,14 +43,8 @@ class MyCarrotScreen extends StatelessWidget {
             iconMenuList: iconMenu1,
           ),
           const SizedBox(height: 3.0),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const QuestionScreen()),
-              );
-            },
-            child: CardIconMenu(iconMenuList: iconMenu2),
+          CardIconMenu(
+            iconMenuList: iconMenu2,
           ),
         ],
       ),
