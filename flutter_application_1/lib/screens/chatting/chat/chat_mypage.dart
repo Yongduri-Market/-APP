@@ -1,21 +1,20 @@
-// ignore_for_file: unnecessary_import
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import '../chat report/chat_report.dart'; // ChatReport 페이지를 import
 
-class Chatmainpage extends StatefulWidget {
-  const Chatmainpage({super.key});
+class ChatMypage extends StatefulWidget {
+  const ChatMypage({super.key});
 
   @override
-  State<Chatmainpage> createState() => _ChatmainpageState();
+  State<ChatMypage> createState() => _ChatMypageState();
 }
 
-class _ChatmainpageState extends State<Chatmainpage> {
+class _ChatMypageState extends State<ChatMypage> {
   final List<Map<String, dynamic>> _items = [
     {'text': '차단하기', 'icon': Icons.sentiment_dissatisfied},
     {'text': '알림끄기', 'icon': Icons.notifications},
     {'text': '신고하기', 'icon': Icons.support_agent},
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +27,7 @@ class _ChatmainpageState extends State<Chatmainpage> {
           ),
         ),
         bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(1.0),
+          preferredSize: Size.fromHeight(10.0),
           child: Divider(
             color: Color.fromARGB(255, 175, 217, 240),
             height: 2.0,
@@ -43,36 +42,33 @@ class _ChatmainpageState extends State<Chatmainpage> {
             // 홀수 인덱스는 구분선을 생성
             return Divider(
               color: Colors.white.withOpacity(0.5),
-              height: 20,
+              height: 70,
               thickness: 1,
             );
           } else {
             // 짝수 인덱스는 텍스트 아이템 생성
             final itemIndex = index ~/ 2; // 짝수 인덱스를 통해 텍스트 인덱스 계산
             final item = _items[itemIndex];
-            return _buildQARow(item['icon'], item['text'], size: 35.0);
+            return ListTile(
+              leading: Icon(item['icon'], size: 35.0, color: Colors.white),
+              title: Text(
+                item['text'],
+                style: const TextStyle(fontSize: 16, color: Colors.black),
+              ),
+              onTap: () {
+                if (item['text'] == '신고하기') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const ChatReport(), // ChatReport 페이지로 이동
+                    ),
+                  );
+                }
+              },
+            );
           }
         },
-      ),
-    );
-  }
-
-  Widget _buildQARow(IconData iconData, String text, {double size = 24.0}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(iconData, size: size, color: Colors.white),
-          const SizedBox(width: 20.0), // 아이콘과 텍스트 사이의 간격 조절
-          Expanded(
-            child: Text(
-              text,
-              style: const TextStyle(fontSize: 16, color: Colors.black),
-            ),
-          ),
-        ],
       ),
     );
   }

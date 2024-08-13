@@ -6,6 +6,7 @@ import 'dart:io';
 import '../chat appointment/appointment.dart';
 import 'chat_notice.dart'; // Import the ChatNotice widget
 import 'chat_notice2.dart'; // Import the ChatNotice2 widget
+import 'chat_mypage.dart'; // Import the ChatMypage widget
 
 class Chatmainpage extends StatefulWidget {
   const Chatmainpage({super.key});
@@ -197,6 +198,31 @@ class _ChatmainpageState extends State<Chatmainpage> {
                   ),
                 ),
                 const SizedBox(width: 10),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 167, 212, 236),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ChatMypage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      '신고하기',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
