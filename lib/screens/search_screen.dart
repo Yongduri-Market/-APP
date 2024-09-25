@@ -85,43 +85,6 @@ class _SearchScreenState extends State<SearchScreen> {
             const SizedBox(
               height: 8,
             ),
-            const Text('인기 검색'),
-            const SizedBox(
-              height: 8,
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: SingleChildScrollView(
-                clipBehavior: Clip.none,
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    ...List.generate(
-                      4,
-                      (index) => const Card(
-                        color: Color(0xffB1E2F1),
-                        elevation: 0,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 8,
-                            horizontal: 24,
-                          ),
-                          child: Text(
-                            '          ',
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
             const Text('최근 검색'),
             const SizedBox(
               height: 8,
