@@ -20,6 +20,16 @@ class _SellScreenState extends State<SellScreen> {
     '구하기',
   ];
 
+  int categoryMethodIndex = -1;
+
+  final List<String> categoryMethods = [
+    '책',
+    '의류',
+    '전자기기',
+    '부동산',
+    '기타',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -134,6 +144,58 @@ class _SellScreenState extends State<SellScreen> {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text('카테고리'),
+                const SizedBox(
+                  height: 8,
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: SingleChildScrollView(
+                    clipBehavior: Clip.none,
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        ...List.generate(
+                          categoryMethods.length,
+                              (index) => GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                if (index == categoryMethodIndex) {
+                                  categoryMethodIndex = -1;
+                                } else {
+                                  categoryMethodIndex = index;
+                                }
+                              });
+                            },
+                            child: Card(
+                              color: index == categoryMethodIndex ? const Color(0xff86C3D8) : const Color(0xffB1E2F1),
+                              elevation: index == categoryMethodIndex ? 4 : 0,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 8,
+                                  horizontal: 24,
+                                ),
+                                child: Text(
+                                  categoryMethods[index],
+                                  style: const TextStyle(fontSize: 14),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const Text('가격'),
                 const SizedBox(
                   height: 8,
                 ),
