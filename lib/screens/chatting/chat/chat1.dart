@@ -148,7 +148,8 @@ class _ChatmainpageState extends State<Chatmainpage> {
                             if (newValue == '거래완료') {
                               _showChatNotice();
                             } else if (newValue == '예약중') {
-                              _showChatNotice2();
+                              // 위치 notice 삭제
+                              //_showChatNotice2();
                             }
                           },
                         ),
