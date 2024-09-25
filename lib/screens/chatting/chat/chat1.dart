@@ -354,7 +354,7 @@ class _ChatmainpageState extends State<Chatmainpage> {
                       ],
                     ),
                   );
-                }).toList(),
+                }),
               ],
             ),
           ),

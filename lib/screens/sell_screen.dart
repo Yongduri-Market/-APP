@@ -115,7 +115,7 @@ class _SellScreenState extends State<SellScreen> {
                               });
                             },
                             child: Card(
-                              color: index == tradingMethodIndex ? Color(0xff86C3D8) : const Color(0xffB1E2F1),
+                              color: index == tradingMethodIndex ? const Color(0xff86C3D8) : const Color(0xffB1E2F1),
                               elevation: index == tradingMethodIndex ? 4 : 0,
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
@@ -146,7 +146,7 @@ class _SellScreenState extends State<SellScreen> {
                     Checkbox(
                       activeColor: const Color(0xff86C3D8),
                       checkColor: Colors.white,
-                      side: BorderSide(
+                      side: const BorderSide(
                         color: Colors.white,
                         width: 2.0,
                       ),
@@ -157,7 +157,7 @@ class _SellScreenState extends State<SellScreen> {
                         });
                       },
                     ),
-                    Text(
+                    const Text(
                       '가격 제안 받기',
                       style: TextStyle(fontSize: 14),
                     ),
@@ -204,7 +204,7 @@ class _SellScreenState extends State<SellScreen> {
                         Navigator.of(context).pop();
                       });
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.check_rounded,
                       color: Colors.white,
                       size: 24,

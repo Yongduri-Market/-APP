@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class SalesPost extends StatefulWidget {
+  const SalesPost({super.key});
+
   @override
   _SalesPostState createState() => _SalesPostState();
 }
@@ -29,7 +31,7 @@ class _SalesPostState extends State<SalesPost> {
         child: Container(
           width: screenWidth,
           height: screenHeight,
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child: Stack(
             children: <Widget>[
               _buildBackground(screenWidth, screenHeight),
@@ -65,7 +67,7 @@ class _SalesPostState extends State<SalesPost> {
       child: Container(
         width: width,
         height: height,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
               color: Color.fromRGBO(0, 0, 0, 0.25),
@@ -86,7 +88,7 @@ class _SalesPostState extends State<SalesPost> {
       child: Container(
         width: width,
         height: 364,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color.fromRGBO(223, 239, 243, 1),
         ),
       ),
@@ -100,7 +102,7 @@ class _SalesPostState extends State<SalesPost> {
       child: Container(
         width: 60,
         height: 60,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
               color: Color.fromRGBO(0, 0, 0, 0.25),
@@ -121,7 +123,7 @@ class _SalesPostState extends State<SalesPost> {
       left: 24,
       child: Transform.rotate(
         angle: 0.3059745731999865 * (math.pi / 180),
-        child: Divider(
+        child: const Divider(
           color: Color.fromRGBO(198, 241, 255, 1),
           thickness: 5,
         ),
@@ -130,7 +132,7 @@ class _SalesPostState extends State<SalesPost> {
   }
 
   Widget _buildUserName() {
-    return Positioned(
+    return const Positioned(
       top: 412,
       left: 98,
       child: Text(
@@ -154,7 +156,7 @@ class _SalesPostState extends State<SalesPost> {
       child: Container(
         width: 37,
         height: 37,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/Image176.png'),
             fit: BoxFit.fitWidth,
@@ -173,7 +175,7 @@ class _SalesPostState extends State<SalesPost> {
         height: 21,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(70),
-          color: Color.fromRGBO(255, 255, 255, 1),
+          color: const Color.fromRGBO(255, 255, 255, 1),
         ),
       ),
     );
@@ -188,14 +190,14 @@ class _SalesPostState extends State<SalesPost> {
         height: 21,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(70),
-          color: Color.fromRGBO(135, 194, 212, 1),
+          color: const Color.fromRGBO(135, 194, 212, 1),
         ),
       ),
     );
   }
 
   Widget _buildTemperatureText() {
-    return Positioned(
+    return const Positioned(
       top: 391,
       left: 290,
       child: Text(
@@ -221,14 +223,14 @@ class _SalesPostState extends State<SalesPost> {
         height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(isChat ? 10 : 15),
-          color: Color.fromRGBO(177, 224, 239, 1),
+          color: const Color.fromRGBO(177, 224, 239, 1),
         ),
         child: isChat
             ? Center(
           child: Text(
             text,
             textAlign: TextAlign.left,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromRGBO(0, 0, 0, 1),
               fontFamily: 'Inter',
               fontSize: 15,
@@ -240,11 +242,11 @@ class _SalesPostState extends State<SalesPost> {
             : Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Text(
               text,
               textAlign: TextAlign.left,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Color.fromRGBO(0, 0, 0, 1),
                 fontFamily: 'Inter',
                 fontSize: 18,
@@ -270,7 +272,7 @@ class _SalesPostState extends State<SalesPost> {
   }
 
   Widget _buildGoodsText() {
-    return Positioned(
+    return const Positioned(
       top: 567,
       left: 35,
       child: Text(
@@ -288,7 +290,7 @@ class _SalesPostState extends State<SalesPost> {
   }
 
   Widget _buildPriceText() {
-    return Positioned(
+    return const Positioned(
       top: 877,
       left: 93,
       child: Text(
@@ -306,7 +308,7 @@ class _SalesPostState extends State<SalesPost> {
   }
 
   Widget _buildCategoryText() {
-    return Positioned(
+    return const Positioned(
       top: 600,
       left: 36,
       child: Text(
@@ -329,7 +331,7 @@ class _SalesPostState extends State<SalesPost> {
       left: 33.97,
       child: Transform.rotate(
         angle: 0.09613259960105416 * (math.pi / 180),
-        child: Divider(
+        child: const Divider(
           color: Color.fromRGBO(41, 44, 51, 1),
           thickness: 1,
         ),
@@ -338,7 +340,7 @@ class _SalesPostState extends State<SalesPost> {
   }
 
   Widget _buildDescriptionText() {
-    return Positioned(
+    return const Positioned(
       top: 663,
       left: 33,
       child: Text(
@@ -362,7 +364,7 @@ class _SalesPostState extends State<SalesPost> {
       child: Container(
         width: 30,
         height: 30,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/Image211.png'),
             fit: BoxFit.fitWidth,
@@ -378,7 +380,7 @@ class _SalesPostState extends State<SalesPost> {
       left: 63,
       child: Transform.rotate(
         angle: -90 * (math.pi / 180),
-        child: Divider(
+        child: const Divider(
           color: Color.fromRGBO(198, 241, 255, 1),
           thickness: 5,
         ),

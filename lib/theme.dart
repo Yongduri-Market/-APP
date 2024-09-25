@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -48,7 +46,7 @@ BottomAppBarTheme bottomAppBarTheme() {
     surfaceTintColor: Colors.transparent,
     padding: EdgeInsets.symmetric(horizontal: 16),
     color: Colors.transparent,
-    shape: const CircularNotchedRectangle(),
+    shape: CircularNotchedRectangle(),
   );
 }
 
@@ -97,7 +95,7 @@ ElevatedButtonThemeData elevatedButtonThemeData = ElevatedButtonThemeData(
       color: Colors.white,
     ),
     backgroundColor: const Color(0xff86C3D8),
-    padding: EdgeInsets.symmetric(horizontal: 8),
+    padding: const EdgeInsets.symmetric(horizontal: 8),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(64),
     ),

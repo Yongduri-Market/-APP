@@ -90,7 +90,7 @@ class _MainHomeState extends State<MainHome> {
           ),
           Expanded( // ListView를 Expanded로 감싸서 가용 공간을 차지하도록 수정
             child: ListView.separated(
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                 height: 0,
                 indent: 16,
                 endIndent: 16,

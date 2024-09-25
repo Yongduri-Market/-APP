@@ -89,7 +89,7 @@ class _SalesHistoryState extends State<SalesHistory> {
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => SalesPost()),
+                      MaterialPageRoute(builder: (context) => const SalesPost()),
                     );
                   },
                   child: SalesHistoryItem(comments: index, likes: index * 2),

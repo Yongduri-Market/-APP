@@ -19,7 +19,7 @@ class _MainContentState extends State<MainContent> {
           Container(
             width: 112,
             height: 96,
-            color: Color(0xffE0EFF4),
+            color: const Color(0xffE0EFF4),
           ),
         ],
       ),
