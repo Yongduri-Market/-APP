@@ -1,0 +1,39 @@
+name: yongduri_market
+description: "A merged Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0' # 더 높은 버전으로 설정
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.2.1
+  intl: ^0.19.0
+  font_awesome_flutter: ^10.7.0
+  image_picker: ^0.8.4+4
+  flutter_svg: ^2.0.10+1
+  flutter_native_splash: ^2.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # 모든 assets 통합
+  assets:
+    - assets/main.png
+    - assets/main_font.png
+    - assets/book.jpeg
+    - assets/clothes.jpeg
+    - assets/doll.jpeg
+    - assets/icons/ic_main.svg
+    - assets/icons/ic_title.svg
+    - assets/images/
